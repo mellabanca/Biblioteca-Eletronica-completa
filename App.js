@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import BottomTabNavigator from "./components/BottomTabNavigator";
 import { Rajdhani_600SemiBold } from "@expo-google-fonts/rajdhani";
 import * as Font from "expo-font";
+import { createSwitchNavigator, createAppContainer } from "react-navigation";
+import LoginScreen from "./screens/Login";
 
 export default class App extends Component {
   constructor(){
@@ -25,9 +27,24 @@ export default class App extends Component {
   render() {
     const { fontLoaded } = this.state;
     if(fontLoaded){
-    return <BottomTabNavigator />;
+    return <AppContainer/>;
     }
     return null;
   }
 }
 
+const AppSwitchNavigator = createSwitchNavigator(
+  {
+    Login: {
+      screen: LoginScreen
+    },
+    BottomTab: {
+      screen: BottomTabNavigator
+    },
+  },
+  {
+    initialRouteName: "Login"
+  }
+);
+
+const AppContainer = createAppContainer(AppSwitchNavigator);
