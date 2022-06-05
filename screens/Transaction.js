@@ -148,7 +148,7 @@ export default class TransactionScreen extends Component {
     .then(snapshot => {
       snapshot.docs.map(doc => {
         this.setState({
-        bookName: doc.data().books_details.book_name
+        bookName: doc.data().book_name
         })
       })
     })
@@ -162,7 +162,7 @@ export default class TransactionScreen extends Component {
     .then(snapshot => {
       snapshot.docs.map(doc => {
         this.setState({
-        studentName: doc.data().students_details.student_name
+        studentName: doc.data().student_name
         })
       })
     })
