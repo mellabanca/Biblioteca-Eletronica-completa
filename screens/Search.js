@@ -197,7 +197,8 @@ const styles = StyleSheet.create({
   upperContainer: {
     flex: 0.2,
     justifyContent: "center",
-    alignItems: "center"
+    alignItems: "center",
+    flexDirection: "row",
   },
   textinputContainer: {
     borderWidth: 2,
